@@ -10,8 +10,8 @@
     "message",
     "ds"
   ],
-  "author": "DS_Homework_2",
-  "license": "ISC",
+  "author": "Ibrahim AdDandan",
+  "license": "MIT",
   "dependencies": {
     "amqplib": "^0.5.2",
     "fawn": "^2.1.5",

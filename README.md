@@ -4,7 +4,7 @@
 ## Run the project
 
 start rabbitmq first, and mongod server, then start the server then the client.
-open the browser at [http://localhost:3000/](http://localhost:3000/)
+open the browser at [http://localhost:3001/](http://localhost:3001/)
 to start the server and the client:
 
 ```bash

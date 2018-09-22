@@ -11,8 +11,8 @@
     "messages",
     "ds"
   ],
-  "author": "DS_homework2",
-  "license": "ISC",
+  "author": "Ibrahim AdDandan",
+  "license": "MIT",
   "dependencies": {
     "amqplib": "^0.5.2",
     "body-parser": "^1.18.2",

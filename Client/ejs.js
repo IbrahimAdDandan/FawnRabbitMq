@@ -12,14 +12,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
-/*
-var args = process.argv.slice(2);
-
-if (args.length == 0) {
-  console.log("Usage: rpc_client.js num");
-  process.exit(1);
-}
-*/
 app.get('/', function (req, res) {
   amqp.connect('amqp://localhost', function (err, conn) {
     conn.createChannel(function (err, ch) {
@@ -27,7 +19,6 @@ app.get('/', function (req, res) {
         exclusive: true
       }, function (err, q) {
         var corr = generateUuid();
-        //var num = parseInt(args[0]);
         var num = "get request";
         console.log(' [x] Requesting fib(%s)', num);
 
@@ -35,8 +26,6 @@ app.get('/', function (req, res) {
           if (msg.properties.correlationId == corr) {
             msg1 = JSON.parse(msg.content.toString());
             console.log(' [.] Got ' + msg1);
-            //setTimeout(function() { conn.close(); process.exit(0); }, 500);
-            //res.status(parseInt(msg1.status)).json(msg1.result);
             if (parseInt(msg1.status) == 200) {
               res.render('index', {
                 results: msg1.result
@@ -69,15 +58,12 @@ app.post('/add', function (req, res) {
         exclusive: true
       }, function (err, q) {
         var corr = generateUuid();
-        //var num = parseInt(args[0]);
         console.log(' [x] Requesting' + answer);
 
         ch.consume(q.queue, function (msg) {
           if (msg.properties.correlationId == corr) {
             msg1 = JSON.parse(msg.content.toString());
             console.log(' [.] Got ' + msg1);
-            //setTimeout(function() { conn.close(); process.exit(0); }, 500);
-            //res.status(parseInt(msg1.status)).json(msg1.result);
             res.redirect('/');
           }
         }, {
