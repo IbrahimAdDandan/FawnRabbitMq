@@ -1,0 +1,27 @@
+{
+  "name": "ds2",
+  "version": "2.1.0",
+  "description": "Node.js fawn rabbitmq distributed systems transactions mongoDB mongoose",
+  "main": "",
+  "scripts": {
+    "start": "node ./Server/server.js node ./Client/client.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IbrahimAdDandan/FawnRabbitMq.git"
+  },
+  "keywords": [
+    "rabbitmq",
+    "mongodb",
+    "fawn",
+    "mongoose",
+    "ejs"
+  ],
+  "author": "Ibrahim AdDandan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IbrahimAdDandan/FawnRabbitMq/issues"
+  },
+  "homepage": "https://github.com/IbrahimAdDandan/FawnRabbitMq#readme"
+}

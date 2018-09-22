@@ -1,0 +1,27 @@
+<% include ../views/partials/header %>
+
+<% if (!results) { %>
+	<h2>Welcome! there is no answers yet.</h2>
+<% } else { %>
+	<h2>Answers:</h2>
+	<ul>
+		<% results.forEach(function(result){ %>
+			<li><h3><%= result.content %></h3></li>
+		<% }) %>
+	</ul>
+<% } %>
+
+<form action="/add" method="post" class="form-group">
+	<label for="">Content</label>
+	<input type="text" name="content" id="" placeholder="Content" class="form-control">
+	<label for="">Score</label>
+	<input type="number" name="score" id="" placeholder="Score" class="form-control">
+	<label for="">Is the answer accepted?</label>
+	<input type="checkbox" name="is_accepted" id="" class="">
+	<br>
+	<input type="submit" value="Add your answer" class="btn btn-primary">
+</form>
+
+
+
+<% include ../views/partials/footer %>
